@@ -47,12 +47,15 @@ nav{position:fixed;top:0;width:100%;z-index:200;padding:16px 5%;display:flex;ali
 
 /* HERO */
 .hero{
-  min-height:100vh;padding:120px 5% 100px;position:relative;overflow:hidden;
-  display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;
+  min-height:100vh;
+  padding:0 5% 60px;
+  position:relative;overflow:hidden;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;gap:40px;
 }
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 100% 50%,rgba(61,90,241,0.2) 0%,transparent 65%),radial-gradient(ellipse 50% 50% at 0% 80%,rgba(255,107,43,0.12) 0%,transparent 60%),linear-gradient(180deg,#080810 0%,#0b0b15 100%);}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 100% 50%,rgba(61,90,241,0.2) 0%,transparent 65%),radial-gradient(ellipse 50% 50% at 0% 80%,rgba(255,107,43,0.12) 0%,transparent 60%),radial-gradient(ellipse 35% 35% at 85% 15%,rgba(29,224,208,0.08) 0%,transparent 60%),linear-gradient(180deg,#080810 0%,#0b0b15 100%);}
 .hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.08) 1px,transparent 1px);background-size:32px 32px;mask-image:radial-gradient(ellipse 80% 80% at 70% 50%,black,transparent);}
-.hero-content{position:relative;z-index:2;}
+.hero-content{position:relative;z-index:2;padding-top:100px;}
 .hero-pill{
   display:inline-flex;align-items:center;gap:8px;
   background:rgba(255,107,43,0.12);border:1px solid rgba(255,107,43,0.4);
@@ -65,7 +68,7 @@ nav{position:fixed;top:0;width:100%;z-index:200;padding:16px 5%;display:flex;ali
 .hero h1 .outline{-webkit-text-stroke:2px var(--accent);color:transparent;}
 .hero h1 .clr{color:var(--accent);text-shadow:0 0 40px rgba(255,107,43,0.4);}
 .hero-sub{font-size:16px;color:var(--muted);line-height:1.75;margin:24px 0 36px;animation:up .6s .2s ease both;}
-.hero-sub strong{color:var(--text);}
+.hero-sub strong{color:var(--text);display:block;margin-bottom:4px;}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;animation:up .6s .3s ease both;}
 .btn-fill{
   background:linear-gradient(135deg,var(--accent),#e85a1f);color:#fff;
@@ -82,6 +85,21 @@ nav{position:fixed;top:0;width:100%;z-index:200;padding:16px 5%;display:flex;ali
 }
 .btn-ghost:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(29,224,208,0.06);}
 @keyframes up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+/* SCROLL REVEAL ANIMATIONS */
+.reveal{opacity:0;transform:translateY(50px);transition:opacity .8s ease,transform .8s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-left{opacity:0;transform:translateX(-50px);transition:opacity .8s ease,transform .8s ease;}
+.reveal-left.visible{opacity:1;transform:translateX(0);}
+.reveal-right{opacity:0;transform:translateX(50px);transition:opacity .8s ease,transform .8s ease;}
+.reveal-right.visible{opacity:1;transform:translateX(0);}
+.reveal-scale{opacity:0;transform:scale(0.85);transition:opacity .7s ease,transform .7s ease;}
+.reveal-scale.visible{opacity:1;transform:scale(1);}
+.reveal-delay-1{transition-delay:.1s;}
+.reveal-delay-2{transition-delay:.2s;}
+.reveal-delay-3{transition-delay:.3s;}
+.reveal-delay-4{transition-delay:.4s;}
+.reveal-delay-5{transition-delay:.5s;}
 
 .brands-ticker{
   position:absolute;bottom:0;left:0;right:0;
@@ -626,7 +644,7 @@ footer{background:#04040b;border-top:1px solid var(--border);padding:48px 5% 28p
 
 <!-- BRANDS -->
 <section id="brands">
-  <div class="brands-head">
+  <div class="brands-head reveal">
     <div class="sec-label">▸ Brands We Carry</div>
     <div class="sec-title">9 Brands. <em>Infinite</em> Choices.</div>
     <p class="sec-sub">Every budget, every preference — all brands available under one roof.</p>
@@ -955,6 +973,46 @@ document.querySelectorAll('.brand-card, .why-card, .svc-card, .stat').forEach(ca
   card.addEventListener('mouseleave', () => {
     card.style.transform = '';
   });
+});
+
+// Scroll Reveal Animation
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+  revealObserver.observe(el);
+});
+
+// Staggered card animations
+document.querySelectorAll('.brands-grid .brand-card').forEach((card, i) => {
+  card.classList.add('reveal-scale');
+  card.style.transitionDelay = `${i * 0.07}s`;
+  revealObserver.observe(card);
+});
+document.querySelectorAll('.why-grid .why-card').forEach((card, i) => {
+  card.classList.add('reveal');
+  card.style.transitionDelay = `${i * 0.1}s`;
+  revealObserver.observe(card);
+});
+document.querySelectorAll('.services-grid .svc-card').forEach((card, i) => {
+  card.classList.add('reveal');
+  card.style.transitionDelay = `${i * 0.1}s`;
+  revealObserver.observe(card);
+});
+document.querySelectorAll('.stats-inner .stat').forEach((card, i) => {
+  card.classList.add('reveal-scale');
+  card.style.transitionDelay = `${i * 0.1}s`;
+  revealObserver.observe(card);
+});
+document.querySelectorAll('.rev-card').forEach((card, i) => {
+  card.classList.add('reveal');
+  card.style.transitionDelay = `${i * 0.15}s`;
+  revealObserver.observe(card);
 });
 </script>
 <script type="application/ld+json">
