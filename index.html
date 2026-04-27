@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<meta name="google-site-verification" content="Vj0dcmeOkuX94-z2WKpKOEspw5XhOs4C-T2wpC-kHeY"/>
-  <title>Madhur Sampark | Best Mobile Store in Ranchi | Phone Repair & Sales | Harmu Road</title>
+<meta name="google-site-verification" content="ucoK73My2V-OMtD6abSqfsHsJVoWE3bQRdHN3cduKCQ">
+<title>Madhur Sampark | Best Mobile Store in Ranchi | Phone Repair & Sales | Harmu Road</title>
 <meta name="description" content="Madhur Sampark - Ranchi ka best mobile store. Samsung, Apple, Vivo, OPPO, Realme, OnePlus sabhi brands available. Phone repair, exchange, 0% EMI. Harmu Road, Ranchi. Call: 9835308166">
 <meta name="keywords" content="mobile store Ranchi, phone repair Ranchi, Samsung dealer Ranchi, iPhone repair Ranchi, best mobile shop Ranchi, Harmu Road mobile store, OnePlus Ranchi, Realme dealer Ranchi">
 <meta name="author" content="Madhur Sampark">
@@ -458,7 +458,63 @@ nav{position:fixed;top:0;width:100%;z-index:200;padding:16px 5%;display:flex;ali
 .f-submit:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(255,107,43,0.45);}
 .f-note{font-size:12px;color:var(--muted);text-align:center;margin-top:12px;}
 
-/* FOOTER */
+/* BLOG */
+.blog-card{
+  background:linear-gradient(145deg,#1a1a2e,#13131f);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:22px;padding:32px 28px;
+  transition:transform .3s,box-shadow .3s;
+  position:relative;overflow:hidden;
+  box-shadow:0 8px 30px rgba(0,0,0,0.4),0 1px 0 rgba(255,255,255,0.06) inset;
+  display:flex;flex-direction:column;gap:12px;
+}
+.blog-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  transform:scaleX(0);transition:transform .3s;transform-origin:left;
+}
+.blog-card:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(255,107,43,0.15);}
+.blog-card:hover::before{transform:scaleX(1);}
+.blog-card-featured{
+  border-color:rgba(255,107,43,0.35);
+  box-shadow:0 8px 30px rgba(255,107,43,0.15),0 1px 0 rgba(255,255,255,0.08) inset;
+  background:linear-gradient(145deg,#221a2e,#16101f);
+}
+.blog-tag{
+  display:inline-block;background:rgba(255,107,43,0.12);
+  color:var(--accent2);font-size:11px;font-weight:700;
+  padding:4px 12px;border-radius:20px;
+  border:1px solid rgba(255,107,43,0.25);
+  letter-spacing:1px;text-transform:uppercase;
+  width:fit-content;
+}
+.blog-title{font-size:17px;font-weight:700;color:#fff;line-height:1.4;}
+.blog-excerpt{font-size:13px;color:var(--muted);line-height:1.7;flex:1;}
+.blog-footer{display:flex;justify-content:space-between;align-items:center;margin-top:8px;padding-top:14px;border-top:1px solid var(--border);}
+.blog-date{font-size:12px;color:var(--muted);}
+.blog-read{font-size:11px;color:var(--cyan);font-weight:600;letter-spacing:1px;}
+@media(max-width:950px){
+  #blog > div:nth-child(2){grid-template-columns:1fr 1fr!important;}
+}
+@media(max-width:600px){
+  #blog > div:nth-child(2){grid-template-columns:1fr!important;}
+}
+.blog-item{background:linear-gradient(145deg,#1a1a2e,#13131f);border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;transition:border-color .3s,box-shadow .3s;cursor:pointer;}
+.blog-item:hover{border-color:rgba(255,107,43,0.35);box-shadow:0 8px 30px rgba(255,107,43,0.12);}
+.blog-item.open{border-color:rgba(255,107,43,0.5);box-shadow:0 12px 40px rgba(255,107,43,0.18);}
+.blog-item-header{display:flex;justify-content:space-between;align-items:center;padding:24px 28px;gap:16px;}
+.blog-title{font-size:17px;font-weight:700;color:#fff;line-height:1.4;margin-top:10px;}
+.blog-meta{display:flex;gap:16px;margin-top:8px;}
+.blog-date{font-size:12px;color:var(--muted);}
+.blog-read{font-size:11px;color:var(--cyan);font-weight:600;}
+.blog-arrow{font-size:16px;color:var(--accent);min-width:24px;text-align:center;transition:transform .3s;}
+.blog-item.open .blog-arrow{transform:rotate(180deg);}
+.blog-content{max-height:0;overflow:hidden;transition:max-height .5s ease;padding:0 28px;font-size:14px;color:var(--muted);line-height:1.8;}
+.blog-item.open .blog-content{max-height:1200px;padding:4px 28px 28px;border-top:1px solid var(--border);}
+.blog-content p{color:#b0b4cc;margin-bottom:4px;}
+.blog-content strong{color:#fff;}
+.blog-cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--accent),#e85a1f);color:#fff;padding:11px 24px;border-radius:30px;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 6px 20px rgba(255,107,43,0.35);margin-top:20px;transition:all .2s;}
+.blog-cta:hover{transform:translateY(-2px);}
 footer{background:#04040b;border-top:1px solid var(--border);padding:48px 5% 28px;}
 .footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:36px;}
 .footer-brand b{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#fff;letter-spacing:3px;}
@@ -595,6 +651,7 @@ footer{background:#04040b;border-top:1px solid var(--border);padding:48px 5% 28p
     <li><a href="#products">Products</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#why">Why Us</a></li>
+    <li><a href="#blog">Blog</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a class="nav-cta" href="tel:+919835308166">📞 Call Now</a>
@@ -946,6 +1003,138 @@ footer{background:#04040b;border-top:1px solid var(--border);padding:48px 5% 28p
   </div>
 </section>
 
+<!-- BLOG SECTION -->
+<section id="blog" style="padding:100px 5%;background:var(--mid);">
+  <div style="text-align:center;margin-bottom:56px;">
+    <div class="sec-label">▸ Our Blog</div>
+    <div class="sec-title">Tips & <em>Guides</em></div>
+    <p class="sec-sub" style="margin:0 auto;">Click on any article to read the full post.</p>
+  </div>
+
+  <div class="blog-list" style="max-width:860px;margin:0 auto 48px;display:flex;flex-direction:column;gap:16px;">
+
+    <div class="blog-item" onclick="toggleBlog(this)">
+      <div class="blog-item-header">
+        <div>
+          <span class="blog-tag">Buying Guide</span>
+          <h3 class="blog-title">Best Mobile Phones Under ₹15,000 in Ranchi 2025</h3>
+          <div class="blog-meta"><span class="blog-date">📅 March 2025</span><span class="blog-read">5 min read</span></div>
+        </div>
+        <div class="blog-arrow">▼</div>
+      </div>
+      <div class="blog-content">
+        <p>Looking for the best budget smartphone in Ranchi? At Madhur Sampark, Harmu Road, we always have the latest budget phones in stock. Here are our top picks for 2025:</p>
+        <br>
+        <p><strong>🥇 Realme C67 — ₹12,999</strong><br>Great camera, big battery, smooth display. Best value for money in this range.</p><br>
+        <p><strong>🥈 Redmi 13C — ₹9,999</strong><br>Reliable performance, good camera, long battery life. Perfect for daily use.</p><br>
+        <p><strong>🥉 Samsung Galaxy A15 — ₹14,999</strong><br>Samsung quality at budget price. Super AMOLED display, 50MP camera.</p><br>
+        <p><strong>🔵 Vivo Y28 — ₹13,499</strong><br>Slim design, fast charging, good camera. Popular among youngsters.</p><br>
+        <p>📍 All these phones are available at <strong>Madhur Sampark, Harmu Road, Ranchi</strong>. Visit us or call <strong>+91 98353 08166</strong> for best price!</p>
+        <a href="https://wa.me/919835308166" target="_blank" class="blog-cta">💬 WhatsApp for Price</a>
+      </div>
+    </div>
+
+    <div class="blog-item" onclick="toggleBlog(this)">
+      <div class="blog-item-header">
+        <div>
+          <span class="blog-tag" style="background:rgba(255,68,68,0.12);color:#ff6b6b;border-color:rgba(255,68,68,0.25);">Repair Tips</span>
+          <h3 class="blog-title">Phone Screen Cracked? Do This Before Going to a Repair Shop</h3>
+          <div class="blog-meta"><span class="blog-date">📅 February 2025</span><span class="blog-read">4 min read</span></div>
+        </div>
+        <div class="blog-arrow">▼</div>
+      </div>
+      <div class="blog-content">
+        <p>A cracked screen is stressful — but don't panic! Here's what you should do first:</p><br>
+        <p><strong>✅ Step 1: Check if touch is working</strong><br>If touch works fine, a screen guard can protect further damage until you get it repaired.</p><br>
+        <p><strong>✅ Step 2: Back up your data immediately</strong><br>Connect to WiFi and back up photos, contacts to Google Drive or iCloud right away.</p><br>
+        <p><strong>✅ Step 3: Don't use it with bare fingers on sharp cracks</strong><br>Sharp glass can cut fingers. Use a screen protector or tape temporarily.</p><br>
+        <p><strong>✅ Step 4: Come to Madhur Sampark</strong><br>We repair screens for ALL brands — Samsung, Apple, Vivo, OPPO, Realme, OnePlus, Xiaomi and more. Same day service available!</p><br>
+        <p>📍 <strong>Madhur Sampark, Harmu Road, Ranchi</strong> — Screen repair starting from ₹999</p>
+        <a href="https://wa.me/919835308166" target="_blank" class="blog-cta">🛠️ Book Repair Now</a>
+      </div>
+    </div>
+
+    <div class="blog-item" onclick="toggleBlog(this)">
+      <div class="blog-item-header">
+        <div>
+          <span class="blog-tag" style="background:rgba(29,224,208,0.12);color:#1de0d0;border-color:rgba(29,224,208,0.25);">Comparison</span>
+          <h3 class="blog-title">Samsung Galaxy S25 vs iPhone 16 — Which One to Buy in 2025?</h3>
+          <div class="blog-meta"><span class="blog-date">📅 January 2025</span><span class="blog-read">6 min read</span></div>
+        </div>
+        <div class="blog-arrow">▼</div>
+      </div>
+      <div class="blog-content">
+        <p>Both are flagship phones but which one should you buy? Let's compare:</p><br>
+        <p><strong>📱 Samsung Galaxy S25</strong><br>✅ Better customization & features<br>✅ Bigger screen options<br>✅ Better value for money<br>✅ Excellent Android experience<br>❌ Slightly lower resale value</p><br>
+        <p><strong>🍎 Apple iPhone 16</strong><br>✅ Smoother performance & long software support<br>✅ Better resale value<br>✅ Best-in-class camera video<br>✅ Premium build quality<br>❌ More expensive accessories</p><br>
+        <p><strong>🏆 Our Verdict:</strong> If you use Android apps, Google services, and want more features — go for <strong>Samsung S25</strong>. If you want long-term support, premium feel, and are in the Apple ecosystem — go for <strong>iPhone 16</strong>.</p><br>
+        <p>📍 Both phones available at <strong>Madhur Sampark, Harmu Road, Ranchi</strong>. EMI available!</p>
+        <a href="https://wa.me/919835308166" target="_blank" class="blog-cta">💬 Ask Our Expert</a>
+      </div>
+    </div>
+
+    <div class="blog-item" onclick="toggleBlog(this)">
+      <div class="blog-item-header">
+        <div>
+          <span class="blog-tag" style="background:rgba(61,90,241,0.12);color:#7b9fff;border-color:rgba(61,90,241,0.25);">EMI Guide</span>
+          <h3 class="blog-title">How to Buy a Phone on 0% EMI in Ranchi — Complete Guide</h3>
+          <div class="blog-meta"><span class="blog-date">📅 January 2025</span><span class="blog-read">3 min read</span></div>
+        </div>
+        <div class="blog-arrow">▼</div>
+      </div>
+      <div class="blog-content">
+        <p>Buying a phone on EMI is easy at Madhur Sampark! Here's how it works:</p><br>
+        <p><strong>📋 Documents Required:</strong><br>✅ Aadhar Card<br>✅ PAN Card<br>✅ Credit/Debit Card (any major bank)<br>✅ Mobile number linked to bank</p><br>
+        <p><strong>🏦 Banks Available:</strong><br>HDFC Bank · ICICI Bank · SBI · Axis Bank · Kotak Bank · and more</p><br>
+        <p><strong>💡 How it works:</strong><br>1. Choose your phone<br>2. Select EMI tenure (3/6/9/12 months)<br>3. Swipe your card<br>4. Walk out with your new phone — zero extra charges!</p><br>
+        <p>📍 Visit <strong>Madhur Sampark, Harmu Road, Ranchi</strong> — our staff will guide you through the process in minutes!</p>
+        <a href="https://wa.me/919835308166" target="_blank" class="blog-cta">💳 Check EMI Options</a>
+      </div>
+    </div>
+
+    <div class="blog-item" onclick="toggleBlog(this)">
+      <div class="blog-item-header">
+        <div>
+          <span class="blog-tag" style="background:rgba(255,210,0,0.12);color:#ffd200;border-color:rgba(255,210,0,0.25);">Exchange</span>
+          <h3 class="blog-title">Get Maximum Value for Your Old Phone — Exchange Tips 2025</h3>
+          <div class="blog-meta"><span class="blog-date">📅 December 2024</span><span class="blog-read">4 min read</span></div>
+        </div>
+        <div class="blog-arrow">▼</div>
+      </div>
+      <div class="blog-content">
+        <p>Want the best exchange value for your old phone? Follow these tips:</p><br>
+        <p><strong>📦 Before coming to the store:</strong><br>✅ Clean your phone properly<br>✅ Remove screen cracks if possible (increases value)<br>✅ Factory reset the phone<br>✅ Bring original box and accessories<br>✅ Make sure all buttons & features work</p><br>
+        <p><strong>💰 Factors that affect exchange value:</strong><br>• Phone condition (screen, body)<br>• Battery health<br>• Age of the phone<br>• Original accessories available</p><br>
+        <p><strong>🏆 Why exchange at Madhur Sampark?</strong><br>We give the best exchange value in Ranchi — no hidden deductions, instant evaluation, same-day upgrade!</p><br>
+        <p>📍 Visit us at <strong>Harmu Road, Ranchi</strong> with your old phone and walk out with a brand new one!</p>
+        <a href="https://wa.me/919835308166" target="_blank" class="blog-cta">🔁 Get Exchange Quote</a>
+      </div>
+    </div>
+
+    <div class="blog-item" onclick="toggleBlog(this)">
+      <div class="blog-item-header">
+        <div>
+          <span class="blog-tag" style="background:rgba(29,224,208,0.12);color:#1de0d0;border-color:rgba(29,224,208,0.25);">Battery Tips</span>
+          <h3 class="blog-title">5 Habits That Are Killing Your Phone Battery — Must Read!</h3>
+          <div class="blog-meta"><span class="blog-date">📅 December 2024</span><span class="blog-read">3 min read</span></div>
+        </div>
+        <div class="blog-arrow">▼</div>
+      </div>
+      <div class="blog-content">
+        <p>Is your phone battery draining faster than before? You might be making these common mistakes:</p><br>
+        <p><strong>❌ Mistake 1: Charging overnight</strong><br>Leaving your phone plugged in all night overheats the battery and reduces its lifespan. Charge to 80-90% and unplug.</p><br>
+        <p><strong>❌ Mistake 2: Using phone while charging</strong><br>This generates extra heat which damages battery cells over time.</p><br>
+        <p><strong>❌ Mistake 3: Using cheap chargers</strong><br>Always use original or certified chargers. Cheap chargers damage battery permanently.</p><br>
+        <p><strong>❌ Mistake 4: Letting battery drain to 0%</strong><br>Lithium batteries prefer being between 20-80%. Full discharge every day reduces battery life.</p><br>
+        <p><strong>❌ Mistake 5: High screen brightness always on</strong><br>Screen is the biggest battery drain. Use auto brightness and reduce timeout.</p><br>
+        <p><strong>🔋 Battery dead?</strong> We replace batteries for all brands at <strong>Madhur Sampark, Harmu Road, Ranchi</strong>!</p>
+        <a href="https://wa.me/919835308166" target="_blank" class="blog-cta">🔋 Battery Replacement</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-top">
@@ -992,6 +1181,13 @@ footer{background:#04040b;border-top:1px solid var(--border);padding:48px 5% 28p
 <a class="sticky-call" href="tel:+919835308166" title="Call Us">📞</a>
 
 <script>
+// Blog accordion toggle
+function toggleBlog(el) {
+  const isOpen = el.classList.contains('open');
+  document.querySelectorAll('.blog-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) el.classList.add('open');
+}
+
 // 3D Tilt effect on cards
 document.querySelectorAll('.brand-card, .why-card, .svc-card, .stat').forEach(card => {
   card.addEventListener('mousemove', e => {
